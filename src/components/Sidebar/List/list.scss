@@ -1,0 +1,38 @@
+.list{
+    &:not(:last-child){
+        margin-bottom: 30px;
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        padding: 12px 10px;
+        cursor: pointer;
+        user-select: none;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        position: relative;
+        &:active{
+            top: 1px;
+        }
+        &.active{
+            background-color: #fff;
+            box-shadow: 0 3px 10px rgba(0,0,0,.04);
+        }
+        i{
+            margin-right: 10px;
+            display: inline-flex;
+            i{
+                margin-right: 0;
+                position: relative;
+                left: 8px;
+            }
+        }
+    }
+    &__remove{
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

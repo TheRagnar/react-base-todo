@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic');
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    outline: none;
+}
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Roboto', -apple-system, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: .15px;
+}
+html,body{
+    font-size: 16px;
+}
+
+.todo{
+    height: 100vh;
+    background-color: #F4F6F8;
+    display: flex;
+    &__sidebar{
+        height: 100%;
+        width: 260px;
+        padding: 60px 20px;
+    }
+    
+    &__content{
+        height: 100%;
+        overflow: auto;
+        background-color: #fff;
+        flex-grow: 1;
+        border-left: 1px solid #f1f1f1;
+    }
+}
+.input {
+    width: 100%;
+    &:not(:last-child){
+        margin-bottom: 15px;
+    }
+    input,
+    textarea{
+        outline: none;
+        box-shadow: none;
+    }
+    input[type='text'],
+    input[type='email'],
+    input[type='phone'],
+    textarea{
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: 1px solid #EFEFEF;
+        border-radius: 4px;
+        width: 100%;
+        color: #000;
+        &:focus{
+            border-color: #4DD599;
+        }
+        &::placeholder{
+            color: #C7C7C7;
+        }
+    }
+}
+.btn{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: 0;
+    padding: 14px 20px;
+    text-align: center;
+    position: relative;
+    font-size: 16px;
+    &--primary{
+        color: #fff;
+        background-color: #4dd599;
+        &:hover{
+            background-color: darken($color: #4dd599, $amount: 6%);
+        }
+        &:active{
+            background-color: darken($color: #4dd599, $amount: 9%);
+        }
+    }
+    &:active{
+        top: 1px;
+    }
+    &:disabled{
+        cursor: auto;
+    }
+}

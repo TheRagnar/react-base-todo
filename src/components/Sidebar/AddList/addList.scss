@@ -1,0 +1,44 @@
+.addList{
+    position: relative;
+    &__popup{
+        background: #FFFFFF;
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+        position: relative;
+        width: 300px;
+        padding: 20px;
+    }
+
+    &__button{
+        margin-top: 15px;
+        .btn{
+            width: 100%;
+        }
+    }
+    &__circles{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__circle{
+        .circle{
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        &.active{
+            .circle{
+                border-color: #000;
+            }
+        }
+    }
+    &__close{
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        cursor: pointer;
+        &:hover{
+            opacity: .8;
+        }
+    }
+}
