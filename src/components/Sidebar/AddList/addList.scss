@@ -13,6 +13,9 @@
         margin-top: 15px;
         .btn{
             width: 100%;
+            &:disabled{
+                filter: grayscale(100%);
+            }
         }
     }
     &__circles{

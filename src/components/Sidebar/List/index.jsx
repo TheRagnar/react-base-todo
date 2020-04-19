@@ -1,11 +1,20 @@
 import React from "react";
 import classNames from "classnames";
-import Circle from "../../Circle";
+import axios from "axios";
 
+import Circle from "../../Circle";
 import "./list.scss";
 
 const List = ({ items, isRemovable, onClick, onRemove }) => {
-  console.log(items);
+
+  const removeItem = itemId => {
+    if(window.confirm('Вы действительно хотите удалить список?')) {
+      axios.delete(`http://localhost:3001/lists/${itemId}`).then(() => {
+        onRemove(itemId);
+      })
+    }
+  }
+
   return (
     <ul className="list" onClick={onClick}>
       {items.map(item => (
@@ -20,7 +29,7 @@ const List = ({ items, isRemovable, onClick, onRemove }) => {
           <i>{item.icon ? item.icon : <Circle color={item.color.name} />}</i>
           <span>{item.name}</span>
           {isRemovable ? (
-            <button className="list__remove" onClick={() => onRemove(item.id)}>
+            <button className="list__remove" onClick={() => removeItem(item.id)}>
               <i>
                 <svg
                   width="11"
